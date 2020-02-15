@@ -27,7 +27,7 @@ class Active(smach.State):
         start_time = time.time()
 	while not rospy.is_shutdown() and (time.time() - start_time < 30):
             #ACTIVATION COMMAND
-	    parsed_command = do_parsing(self.command)
+	    parsed_command = do_parsing(self.command, 'ACTIVE')
             if parsed_command is not None:
                 rospy.loginfo(parsed_command)
                 userdata.active_out = [parsed_command[0], parsed_command[1], parsed_command[2]]
