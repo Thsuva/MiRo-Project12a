@@ -9,7 +9,8 @@ from datetime import datetime
 
 from states.idle import Idle
 from states.active import Active
-from states.dummy_perform_action import DummyPA
+from states.dummy_lfo import DummyLFO
+from states.dummy_mto import DummyMTO
 
 from miro_msgs.msg import platform_config,platform_sensors,platform_state,platform_mics,platform_control,core_state,core_control,core_config,bridge_config,bridge_stream
 
@@ -44,8 +45,25 @@ def main():
                                             'time_failure':'outcome_end',
                                             'parsing_failure':'outcome_end'},
                                remapping={'active_out':'command'})
-        smach.StateMachine.add('DUMMY_PA', DummyPA(), 
-                               transitions={'ok':'outcome_end'},
+
+        # Create the sub SMACH state machine perform action
+        sm_perform_action = smach.StateMachine(outcomes=['outcome_end_pa'],
+                                               input_keys=['dummy_pa_in'])
+
+        # Open the container
+        with sm_perform_action:
+
+            # Look for object
+            smach.StateMachine.add('DUMMY_LFO', DummyLFO(), 
+                                   transitions={'found':'DUMMY_MTO', 
+                                                'recognizing_failure':'outcome_end_pa'},
+                                   remapping={'dummy_lfo_in':'dummy_pa_in'})
+            # Move towards object
+            smach.StateMachine.add('DUMMY_MTO', DummyMTO(), 
+                                   transitions={'arrived':'outcome_end_pa'})
+
+        smach.StateMachine.add('DUMMY_PA', sm_perform_action, 
+                               transitions={'outcome_end_pa':'outcome_end'},
                                remapping={'dummy_pa_in':'command'})
 
     # Execute SMACH plan
