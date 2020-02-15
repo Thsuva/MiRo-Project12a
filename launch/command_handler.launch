@@ -7,6 +7,6 @@
 <!-- HANDLING COMMANDS -->
 
 <!-- <node name="subscriber" pkg="command_handler" type="subscriber.py" /> -->
-<node name="smach_example_state_machine" pkg="state_machine" type="state_machine_simple.py" output = "screen"/>
+<node name="state_machine" pkg="MiRo-Project12a" type="state_machine_main.py" output = "screen"/>
 
 </launch>
