@@ -17,6 +17,7 @@ class Active(smach.State):
 
         ## Subscriber to the topic /speech_to_text a message of type String that cointains the vocal command converted in text
         self.sub_speech_to_text = rospy.Subscriber('/speech_to_text', Speech2text, self.callback_receive_command,queue_size=1)
+        self.pub_rgb_light = rospy.Publisher('/rgb_msg', String, queue_size=1)
 
     def callback_receive_command(self, text):
         if text.confidence > self.min_confidence:
@@ -24,6 +25,7 @@ class Active(smach.State):
 
     def execute(self, userdata):
         rospy.loginfo('Executing state ACTIVE')
+        self.pub_rgb_light.publish("BLUE_LIGHT_ON")
         start_time = time.time()
 	while not rospy.is_shutdown() and (time.time() - start_time < 30):
             #ACTIVATION COMMAND
