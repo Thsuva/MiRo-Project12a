@@ -10,7 +10,7 @@ from parser.parser import do_parsing
 # define state Active
 class Active(smach.State):
     def __init__(self):
-        smach.State.__init__(self, outcomes=['successful', 'time_failure', 'parsing_failure'],
+        smach.State.__init__(self, outcomes=['successful', 'time_failure'],
                                    output_keys=['active_out'])
         self.command = String()
         self.min_confidence = .65

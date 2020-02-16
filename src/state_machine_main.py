@@ -11,6 +11,8 @@ from states.idle import Idle
 from states.active import Active
 from states.dummy_lfo import DummyLFO
 from states.dummy_mto import DummyMTO
+from states.failure import Failure
+from states.happy import Happy
 
 from miro_msgs.msg import platform_config,platform_sensors,platform_state,platform_mics,platform_control,core_state,core_control,core_config,bridge_config,bridge_stream
 
@@ -42,8 +44,7 @@ def main():
                                transitions={'miro':'ACTIVE'})
         smach.StateMachine.add('ACTIVE', Active(), 
                                transitions={'successful':'DUMMY_PA',
-                                            'time_failure':'outcome_end',
-                                            'parsing_failure':'outcome_end'},
+                                            'time_failure':'FAILURE'},
                                remapping={'active_out':'command'})
 
         # Create the sub SMACH state machine perform action
@@ -56,15 +57,21 @@ def main():
             # Look for object
             smach.StateMachine.add('DUMMY_LFO', DummyLFO(), 
                                    transitions={'found':'DUMMY_MTO', 
-                                                'recognizing_failure':'outcome_end_pa'},
+                                                'recognizing_failure':'FAILURE'},
                                    remapping={'dummy_lfo_in':'dummy_pa_in'})
             # Move towards object
             smach.StateMachine.add('DUMMY_MTO', DummyMTO(), 
                                    transitions={'arrived':'outcome_end_pa'})
 
         smach.StateMachine.add('DUMMY_PA', sm_perform_action, 
-                               transitions={'outcome_end_pa':'outcome_end'},
+                               transitions={'outcome_end_pa':'HAPPY'},
                                remapping={'dummy_pa_in':'command'})
+
+        smach.StateMachine.add('FAILURE', Failure(), 
+                               transitions={'reset':'IDLE'})
+
+        smach.StateMachine.add('HAPPY', Happy(), 
+                               transitions={'ok':'outcome_end'})
 
     # Execute SMACH plan
     outcome = sm.execute()

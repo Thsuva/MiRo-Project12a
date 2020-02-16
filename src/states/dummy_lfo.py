@@ -3,7 +3,6 @@ import rospy
 import time
 
 from std_msgs.msg import String,Bool,Int32
-from speech_interaction.msg import Speech2text
 
 # define state Active
 class DummyLFO(smach.State):
