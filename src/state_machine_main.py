@@ -48,7 +48,7 @@ def main():
                                remapping={'active_out':'command'})
 
         # Create the sub SMACH state machine perform action
-        sm_perform_action = smach.StateMachine(outcomes=['outcome_end_pa'],
+        sm_perform_action = smach.StateMachine(outcomes=['outcome_end_pa','outcome_end_failure_pa'],
                                                input_keys=['dummy_pa_in'])
 
         # Open the container
@@ -57,14 +57,15 @@ def main():
             # Look for object
             smach.StateMachine.add('DUMMY_LFO', DummyLFO(), 
                                    transitions={'found':'DUMMY_MTO', 
-                                                'recognizing_failure':'FAILURE'},
+                                                'recognizing_failure':'outcome_end_failure_pa'},
                                    remapping={'dummy_lfo_in':'dummy_pa_in'})
             # Move towards object
             smach.StateMachine.add('DUMMY_MTO', DummyMTO(), 
                                    transitions={'arrived':'outcome_end_pa'})
 
         smach.StateMachine.add('DUMMY_PA', sm_perform_action, 
-                               transitions={'outcome_end_pa':'HAPPY'},
+                               transitions={'outcome_end_pa':'HAPPY',
+                                            'outcome_end_failure_pa':'FAILURE'},
                                remapping={'dummy_pa_in':'command'})
 
         smach.StateMachine.add('FAILURE', Failure(), 
