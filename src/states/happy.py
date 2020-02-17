@@ -18,6 +18,17 @@ from miro_constants import miro
 from datetime import datetime
 import time
 
+## Function used for conversion from byteArray to String (The values that we get for the head touch sensors are byteArrays)
+def fmt(x, f): 
+    s = ""
+    x = bytearray(x)
+    for i in range(0, len(x)):
+        if not i == 0:
+            s = s + ", "
+        s = s + f.format(x[i])
+    return s
+
+
 
 ## \file happy.py 
 ## \brief Class Happy handles the happy state.
