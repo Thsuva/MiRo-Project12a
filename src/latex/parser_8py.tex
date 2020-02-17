@@ -1,0 +1,56 @@
+\hypertarget{parser_8py}{}\doxysection{parser/parser.py File Reference}
+\label{parser_8py}\index{parser/parser.py@{parser/parser.py}}
+
+
+The functions inside \mbox{\hyperlink{parser_8py}{parser.\+py}} are usefull in order to extract information and keywords from the string published in the topic \textquotesingle{}/speech to text\textquotesingle{}. It\textquotesingle{}s return depends on various factor and can eather be a triple, a single word, or a None object. ~\newline
+ The string gets changed in lower case than transformed in a list of single word. ~\newline
+ If the calling state is A\+C\+T\+I\+VE each element of the firts list are compared with each element of standard allowed keyword for each of three category. If a keyword for each category is found in the list a triplet is made with the result and is returned. ~\newline
+ If the calling state is I\+D\+LE the element in the list are compared to a \textquotesingle{}wakeup word\textquotesingle{} and if that is present its returned. ~\newline
+ The standard return for this funcion is a None object that signifies that an error occurred and not enough information has been extracted from the speech to text string.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{parser_8py_ad1c848ccb079596e79d985c8f5e2b8c3}{parser.\+parser.\+check\+\_\+presence}} (list1, list2)
+\begin{DoxyCompactList}\small\item\em Simple function that check if one of the key\+\_\+word in list1 is present in list2 and returns it. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{parser_8py_a0fd98339e2dfd44bf343d670e14eba31}{parser.\+parser.\+do\+\_\+parsing}} (text, calling\+\_\+state)
+\begin{DoxyCompactList}\small\item\em The function deals with the set up for the searching of key\+\_\+word ~\newline
+ ~\newline
+ If the calling state is A\+C\+T\+I\+VE it repeat the search 3 times looking for keyword inside 3 list of different category returning a list with on item from each list if found or None otherwise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The functions inside \mbox{\hyperlink{parser_8py}{parser.\+py}} are usefull in order to extract information and keywords from the string published in the topic \textquotesingle{}/speech to text\textquotesingle{}. It\textquotesingle{}s return depends on various factor and can eather be a triple, a single word, or a None object. ~\newline
+ The string gets changed in lower case than transformed in a list of single word. ~\newline
+ If the calling state is A\+C\+T\+I\+VE each element of the firts list are compared with each element of standard allowed keyword for each of three category. If a keyword for each category is found in the list a triplet is made with the result and is returned. ~\newline
+ If the calling state is I\+D\+LE the element in the list are compared to a \textquotesingle{}wakeup word\textquotesingle{} and if that is present its returned. ~\newline
+ The standard return for this funcion is a None object that signifies that an error occurred and not enough information has been extracted from the speech to text string. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{parser_8py_ad1c848ccb079596e79d985c8f5e2b8c3}\label{parser_8py_ad1c848ccb079596e79d985c8f5e2b8c3}} 
+\index{parser.py@{parser.py}!check\_presence@{check\_presence}}
+\index{check\_presence@{check\_presence}!parser.py@{parser.py}}
+\doxysubsubsection{\texorpdfstring{check\_presence()}{check\_presence()}}
+{\footnotesize\ttfamily def parser.\+parser.\+check\+\_\+presence (\begin{DoxyParamCaption}\item[{}]{list1,  }\item[{}]{list2 }\end{DoxyParamCaption})}
+
+
+
+Simple function that check if one of the key\+\_\+word in list1 is present in list2 and returns it. 
+
+Otherwise it retrurns an empty string \mbox{\Hypertarget{parser_8py_a0fd98339e2dfd44bf343d670e14eba31}\label{parser_8py_a0fd98339e2dfd44bf343d670e14eba31}} 
+\index{parser.py@{parser.py}!do\_parsing@{do\_parsing}}
+\index{do\_parsing@{do\_parsing}!parser.py@{parser.py}}
+\doxysubsubsection{\texorpdfstring{do\_parsing()}{do\_parsing()}}
+{\footnotesize\ttfamily def parser.\+parser.\+do\+\_\+parsing (\begin{DoxyParamCaption}\item[{}]{text,  }\item[{}]{calling\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+The function deals with the set up for the searching of key\+\_\+word ~\newline
+ ~\newline
+ If the calling state is A\+C\+T\+I\+VE it repeat the search 3 times looking for keyword inside 3 list of different category returning a list with on item from each list if found or None otherwise. 
+
+~\newline
+ If the calling state is I\+D\+LE it looks for the wake\+\_\+up\+\_\+word inside the parsed string returning it if it is found or None otherwise. 
