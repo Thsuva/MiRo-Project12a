@@ -44,8 +44,9 @@ The interface also handles text to speech, but for our project we simply decided
 
 ### OpenCV apps 
 
+TO BE DONE
 
-### MiRo-Project12a installation
+## MiRo-Project12a installation
 
 Inside your catkin workspace's src folder do:
 
@@ -61,7 +62,7 @@ $ source devel/setup.bash
 
 ![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/StateMachine.jpg)
 
-* **src/states/**: directory which contains all the needed states to make the state machine work
+* **src/states/**: directory which contains all the needed states to make the state machine work (for more specific information, see the readme file inside the folder).
 * **src/parser/parser.py**: file that contains the logic to clean up the input from `/speech_to_text` in order to get the required information (action, colour, target). To wake up MiRo, only the chosen "wake up word" (that can be modified inside this file) is needed.
 
 ## Acknowledgments
