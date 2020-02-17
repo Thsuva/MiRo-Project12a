@@ -8,8 +8,8 @@ from std_msgs.msg import String,Bool,Int32
 ## \brief Class DummyLFO handles the look for object state.
 ## @n LOOK FOR OBJECT has:
 ## @n - input (dummy_lfo_in): a vocal command by an user
-## @n - output (found): the object has been correctly found
-## @n - output (recognizing_failure): the object has NOT been correctly found
+## @n - outcome (found): the object has been correctly found
+## @n - outcome (recognizing_failure): the object has NOT been correctly found
 class DummyLFO(smach.State):
 
     ## Constructor

@@ -7,7 +7,7 @@ from std_msgs.msg import String,Bool,Int32
 ## \file dummy_mto.py 
 ## \brief Class DummyMTO handles the move towards object state.
 ## @n MOVE TOWARDS OBJECT has:
-## @n - output (arrived): MiRo has arrived to the goal object
+## @n - outcome (arrived): MiRo has arrived to the goal object
 class DummyMTO(smach.State):
 
     ## Constructor

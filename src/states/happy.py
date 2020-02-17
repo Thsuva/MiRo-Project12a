@@ -6,7 +6,7 @@ from std_msgs.msg import String,Bool,Int32
 ## \file happy.py 
 ## \brief Class Happy handles the happy state.
 ## @n HAPPY has:
-## @n - output (ok): MiRo signals that the goal has been reached
+## @n - outcome (ok): MiRo signals that the goal has been reached
 class Happy(smach.State):
     
     ## Constructor
