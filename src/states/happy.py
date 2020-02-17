@@ -14,15 +14,14 @@ class Happy(smach.State):
         ## Initialize the state
         smach.State.__init__(self, outcomes=['ok'])
 
-        ## Publisher to the topic /rgb_msg, a message of type String which signals to turn lights on and their colour
+        ## Publisher to the topic /rgb_msg, the message is of type String and signals to turn lights on and their colour
         self.pub_rgb_light = rospy.Publisher('/rgb_msg', String, queue_size=1)
 
     ## Execute the state: MiRo has to show his happiness
     def execute(self, userdata):
         rospy.loginfo('Executing state HAPPY')
-	
-        ## Turn green lights on
-        self.pub_rgb_light.publish("GREEN_LIGHT_ON")
+
+        self.pub_rgb_light.publish("GREEN_LIGHT_ON") # Dummy action string for debug
 
         # TODO: This part could be modified in order to show a more complex behaviour
 
