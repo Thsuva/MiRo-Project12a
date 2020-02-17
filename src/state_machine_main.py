@@ -30,7 +30,7 @@ import miro_msgs
 
 ## \file state_machine_main.py 
 ## \brief The node state_machine deals with the building of the state machine's structure.
-## @n The architecture of the state machine corresponds to the uml showed in docs/StateMachine.jpg file. 
+## @n The architecture of the state machine corresponds to the uml shown in docs/StateMachine.jpg file. 
 
 ## \brief Function main initializes the node and builds the state machine
 def main():

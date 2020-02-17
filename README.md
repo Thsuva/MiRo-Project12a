@@ -12,7 +12,7 @@ The project is aimed to build a software architecture to control, using audio co
 ## Prerequisites
 
 ### ROS
-The project has been developed and tested with [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+The project has been developed and tested with [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu).
 
 ### MIROapp v1.0
 
@@ -57,6 +57,14 @@ $ source devel/setup.bash
 
 ## The modules
 
+* **src/state_machine_main.py**: main file that builds the state machine, which is the back bone of the project, as shown in this UML:
 
+![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/StateMachine.jpg)
+
+* **src/states/**: directory which contains all the needed states to make the state machine work
+* **src/parser/parser.py**: file that contains the logic to clean up the input from `/speech_to_text` in order to get the required information (action, colour, target). To wake up MiRo, only the chosen "wake up word" (that can be modified inside this file) is needed.
 
 ## Acknowledgments
+
+* [ros_verbal_interaction_node](https://github.com/EmaroLab/ros_verbal_interaction_node.git) repository by Luca Buoncompagni
+* [MiRo-training](https://github.com/EmaroLab/MiRo-training) repository by Roberta Delrio, Valentina Pericu
