@@ -1,8 +1,22 @@
 import smach
-import rospy
-import time
 
-from std_msgs.msg import String,Bool,Int32
+import rospy
+from std_msgs.msg import String
+from sensor_msgs.msg import Image,CompressedImage,Range,Imu
+from geometry_msgs.msg import Twist,Pose
+import random
+
+import miro_msgs
+from miro_msgs.msg import platform_config,platform_sensors,platform_state,platform_mics,platform_control,core_state,core_control,core_config,bridge_config,bridge_stream
+
+import math
+import numpy
+import time
+import sys
+from miro_constants import miro
+
+from datetime import datetime
+import time
 
 ## \file failure.py 
 ##\brief The class Failure handles the failure state.
@@ -13,14 +27,30 @@ class Failure(smach.State):
     def __init__(self):
         ## state initialization 
         smach.State.__init__(self, outcomes=['reset'])
-        ## Publisher to the topic /rgb_msg, the messagen is of type String and signals that the light should be truned on, and which color they should have
-	self.pub_rgb_light = rospy.Publisher('/rgb_msg', String, queue_size=1)
+        ## Node rate
+        self.rate = rospy.get_param('rate',200)
+        ## Publisher to the topic /miro_sad a message of type platform_control which corresponds to the "Bad" action.
+        self.pub_platform_control = rospy.Publisher('/miro/rob01/platform/control',platform_control,queue_size=0)
     
     ## Execute the state: miro show disappointment and sadness 
     def execute(self, userdata):
 
-        self.pub_rgb_light.publish('RED_LIGHT_ON')  # Dummy action string for debug
-        # TODO: Here could be added code to express a more complex behaviour before resetting to idle state
+        r = rospy.Rate(self.rate)
+        q = platform_control()
+
+        start_time = time.time()  # Initialize the timer
+        while not rospy.is_shutdown() and (time.time() - start_time < 15):
+
+            q.eyelid_closure = 0.3
+            q.body_config = [0.0,1.0,0.2,0.1]
+            q.body_config_speed = [0.0,-1.0,-1.0,-1.0]
+            q.lights_raw = [0,0,255,0,0,255,0,0,255,0,0,255,0,0,255,0,0,255]
+            q.tail = -1.0
+            q.ear_rotate = [1.0,1.0]
+            q.body_vel.linear.x = 0.0
+            q.body_vel.angular.z = 0.2
+            self.pub_platform_control.publish(q)
+            r.sleep()
         
 
         return 'reset'

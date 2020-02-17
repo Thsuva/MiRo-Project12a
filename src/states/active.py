@@ -51,6 +51,7 @@ class Active(smach.State):
             if parsed_command is not None:
                 rospy.loginfo(parsed_command)
                 userdata.active_out = [parsed_command[0], parsed_command[1], parsed_command[2]]  # Setting output 
+                self.command = String()
                 return 'successful'
 
         return 'time_failure'

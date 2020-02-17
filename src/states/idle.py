@@ -37,4 +37,5 @@ class Idle(smach.State):
             if do_parsing(self.command, 'IDLE') is not None:
                 # State change
                 rospy.loginfo('I am awake')
+                self.command = String()
                 return 'miro'

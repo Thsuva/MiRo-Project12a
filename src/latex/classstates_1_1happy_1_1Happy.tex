@@ -12,28 +12,77 @@ Inheritance diagram for states.\+happy.\+Happy\+:\begin{figure}[H]
 \mbox{\Hypertarget{classstates_1_1happy_1_1Happy_a8a66a4fdc1a0391cedfdd6a2a5eb0598}\label{classstates_1_1happy_1_1Happy_a8a66a4fdc1a0391cedfdd6a2a5eb0598}} 
 def \mbox{\hyperlink{classstates_1_1happy_1_1Happy_a8a66a4fdc1a0391cedfdd6a2a5eb0598}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classstates_1_1happy_1_1Happy_a803db9d09445ae86062cbec66e4398a2}{callback\+\_\+touch}} (self, datasensor)
+\begin{DoxyCompactList}\small\item\em Callback function that saves in class\textquotesingle{} attributes the capacitive sensor readings converted ~\newline
+ \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstates_1_1happy_1_1Happy_adfc9e5714ff9dfe578e54d7eeb6dd191}\label{classstates_1_1happy_1_1Happy_adfc9e5714ff9dfe578e54d7eeb6dd191}} 
 def \mbox{\hyperlink{classstates_1_1happy_1_1Happy_adfc9e5714ff9dfe578e54d7eeb6dd191}{execute}} (self, userdata)
 \begin{DoxyCompactList}\small\item\em Execute the state\+: Mi\+Ro has to show his happiness. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
+\doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classstates_1_1happy_1_1Happy_abc7a2b8249ae8ac4ab1994de0f5c7ecf}{pub\+\_\+rgb\+\_\+light}}
-\begin{DoxyCompactList}\small\item\em Initialize the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_adaee04a8fdb2a1d8745e65036303c532}\label{classstates_1_1happy_1_1Happy_adaee04a8fdb2a1d8745e65036303c532}} 
+\mbox{\hyperlink{classstates_1_1happy_1_1Happy_adaee04a8fdb2a1d8745e65036303c532}{rate}}
+\begin{DoxyCompactList}\small\item\em Node rate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_a3d5da16b9b95518ab25b4ac8d37e3a15}\label{classstates_1_1happy_1_1Happy_a3d5da16b9b95518ab25b4ac8d37e3a15}} 
+\mbox{\hyperlink{classstates_1_1happy_1_1Happy_a3d5da16b9b95518ab25b4ac8d37e3a15}{h1}}
+\begin{DoxyCompactList}\small\item\em Initialization of head capacitive sensors self.\+sensors\+\_\+head = \mbox{[}0, 0, 0, 0\mbox{]} ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_a7a6bb56dd5bd396049e94bf90081e92f}\label{classstates_1_1happy_1_1Happy_a7a6bb56dd5bd396049e94bf90081e92f}} 
+{\bfseries h2}
+\item 
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_ad6631b166bfeacac63ebf1ec6080baf7}\label{classstates_1_1happy_1_1Happy_ad6631b166bfeacac63ebf1ec6080baf7}} 
+{\bfseries h3}
+\item 
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_a9339e344e66ab663014b62909eb9a99d}\label{classstates_1_1happy_1_1Happy_a9339e344e66ab663014b62909eb9a99d}} 
+{\bfseries h4}
+\item 
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_a6ebe62232a32bf75dae48511e8aa3325}\label{classstates_1_1happy_1_1Happy_a6ebe62232a32bf75dae48511e8aa3325}} 
+\mbox{\hyperlink{classstates_1_1happy_1_1Happy_a6ebe62232a32bf75dae48511e8aa3325}{b1}}
+\begin{DoxyCompactList}\small\item\em Initialization of bodycapacitive sensors self.\+sensors\+\_\+body = \mbox{[}0, 0, 0, 0\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_a6f46d1fa626126b8e0c733c305d89924}\label{classstates_1_1happy_1_1Happy_a6f46d1fa626126b8e0c733c305d89924}} 
+{\bfseries b2}
+\item 
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_a5f8f86bbc9720aa6c56694bf2b40cfc0}\label{classstates_1_1happy_1_1Happy_a5f8f86bbc9720aa6c56694bf2b40cfc0}} 
+{\bfseries b3}
+\item 
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_a9164fbb44cd9bf917e7746ea13bedcc9}\label{classstates_1_1happy_1_1Happy_a9164fbb44cd9bf917e7746ea13bedcc9}} 
+{\bfseries b4}
+\item 
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_ac25722f6efac7bc6b28dc66d990f8971}\label{classstates_1_1happy_1_1Happy_ac25722f6efac7bc6b28dc66d990f8971}} 
+\mbox{\hyperlink{classstates_1_1happy_1_1Happy_ac25722f6efac7bc6b28dc66d990f8971}{sub\+\_\+sensors\+\_\+touch}}
+\begin{DoxyCompactList}\small\item\em Subscriber to the topic /miro/rob01/platform/sensors a message of type platform\+\_\+sensors that cointains the information about the capacitive sensors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_a0d30d3ce6050989e85ae3e36e30fbacf}\label{classstates_1_1happy_1_1Happy_a0d30d3ce6050989e85ae3e36e30fbacf}} 
+{\bfseries callback\+\_\+touch}
+\item 
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_a3455224da68cb567bddf3109bd21ba2e}\label{classstates_1_1happy_1_1Happy_a3455224da68cb567bddf3109bd21ba2e}} 
+{\bfseries queue\+\_\+size}
+\item 
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_afab87b06b11992b24bb4ae9774b75012}\label{classstates_1_1happy_1_1Happy_afab87b06b11992b24bb4ae9774b75012}} 
+\mbox{\hyperlink{classstates_1_1happy_1_1Happy_afab87b06b11992b24bb4ae9774b75012}{pub\+\_\+platform\+\_\+control}}
+\begin{DoxyCompactList}\small\item\em Publisher to the topic /miro\+\_\+good a message of type platform\+\_\+control which corresponds to the \char`\"{}\+Good\char`\"{} action. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_a57319df0b8856f4909f125f43030aeed}\label{classstates_1_1happy_1_1Happy_a57319df0b8856f4909f125f43030aeed}} 
+{\bfseries platform\+\_\+control}
+\end{DoxyCompactItemize}
 
 
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_abc7a2b8249ae8ac4ab1994de0f5c7ecf}\label{classstates_1_1happy_1_1Happy_abc7a2b8249ae8ac4ab1994de0f5c7ecf}} 
-\index{states.happy.Happy@{states.happy.Happy}!pub\_rgb\_light@{pub\_rgb\_light}}
-\index{pub\_rgb\_light@{pub\_rgb\_light}!states.happy.Happy@{states.happy.Happy}}
-\doxysubsubsection{\texorpdfstring{pub\_rgb\_light}{pub\_rgb\_light}}
-{\footnotesize\ttfamily states.\+happy.\+Happy.\+pub\+\_\+rgb\+\_\+light}
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstates_1_1happy_1_1Happy_a803db9d09445ae86062cbec66e4398a2}\label{classstates_1_1happy_1_1Happy_a803db9d09445ae86062cbec66e4398a2}} 
+\index{states.happy.Happy@{states.happy.Happy}!callback\_touch@{callback\_touch}}
+\index{callback\_touch@{callback\_touch}!states.happy.Happy@{states.happy.Happy}}
+\doxysubsubsection{\texorpdfstring{callback\_touch()}{callback\_touch()}}
+{\footnotesize\ttfamily def states.\+happy.\+Happy.\+callback\+\_\+touch (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{datasensor }\end{DoxyParamCaption})}
 
 
 
-Initialize the state. 
+Callback function that saves in class\textquotesingle{} attributes the capacitive sensor readings converted ~\newline
+ 
 
-Publisher to the topic /rgb\+\_\+msg, the message is of type String and signals to turn lights on and their colour 
+\begin{DoxyVerb}for i in range (0,4):
+    self.sensors_head[i] = int(fmt(datasensor.touch_head, '{0:.0f}')[i*3])
+    self.sensors_body[i] = int(fmt(datasensor.touch_body, '{0:.0f}')[i*3])
+\end{DoxyVerb}
+ 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

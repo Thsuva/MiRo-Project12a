@@ -28,9 +28,7 @@ def fmt(x, f):
         s = s + f.format(x[i])
     return s
 
-
-
-## \file happy.py 
+## \file happy.py
 ## \brief Class Happy handles the happy state.
 ## @n HAPPY has:
 ## @n - outcome (ok): MiRo signals that the goal has been reached
@@ -41,7 +39,7 @@ class Happy(smach.State):
         ## Initialize the state
         smach.State.__init__(self, outcomes=['ok'])
 
-	    ## Node rate
+	## Node rate
         self.rate = rospy.get_param('rate',200)
 
         ## Initialization of head capacitive sensors
@@ -58,18 +56,18 @@ class Happy(smach.State):
         self.b4 = 0
 
         ## Subscriber to the topic /miro/rob01/platform/sensors a message of type platform_sensors that cointains the information about the capacitive sensors.
-        #self.sub_sensors_touch = rospy.Subscriber('/miro/rob01/platform/sensors', platform_sensors, self.callback_touch,queue_size =1)
+        self.sub_sensors_touch = rospy.Subscriber('/miro/rob01/platform/sensors', platform_sensors, self.callback_touch,queue_size=1)
         ## Publisher to the topic /miro_good a message of type platform_control which corresponds to the "Good" action.
         self.pub_platform_control = rospy.Publisher('/miro/rob01/platform/control',platform_control,queue_size=0)
    
     ## Callback function that saves in class' attributes the capacitive sensor readings converted    
-    #def callback_touch(self, datasensor):
+    def callback_touch(self, datasensor):
         '''
         for i in range (0,4):
             self.sensors_head[i] = int(fmt(datasensor.touch_head, '{0:.0f}')[i*3])
             self.sensors_body[i] = int(fmt(datasensor.touch_body, '{0:.0f}')[i*3])
         '''
-        '''
+        
         self.h1 = int(fmt(datasensor.touch_head, '{0:.0f}')[0]) 
         self.h2 = int(fmt(datasensor.touch_head, '{0:.0f}')[3]) 
         self.h3 = int(fmt(datasensor.touch_head, '{0:.0f}')[6])
@@ -78,7 +76,6 @@ class Happy(smach.State):
         self.b2 = int(fmt(datasensor.touch_body, '{0:.0f}')[3]) 
         self.b3 = int(fmt(datasensor.touch_body, '{0:.0f}')[6]) 
         self.b4 = int(fmt(datasensor.touch_body, '{0:.0f}')[9])
-        '''
 
 
     ## Execute the state: MiRo has to show his happiness
@@ -89,7 +86,7 @@ class Happy(smach.State):
         q = platform_control()
         count = 0
         start_time = time.time()  # Initialize the timer
-        while not rospy.is_shutdown() and (time.time() - start_time < 5):
+        while not rospy.is_shutdown() and (time.time() - start_time < 60):
             
             q.sound_index_P1 = 1
 
