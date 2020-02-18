@@ -85,7 +85,8 @@ To run it, simply type and run:
 $ roslaunch MiRo-Project12a state_machine.launch
 ```
 
-### rqt_graph
+**Be sure to launch the app to connect to MiRo only in this moment, otherwise there will be a failure of connection (MiRo topics won't be present in your rostopic list).**
+### RQT graph
 
 TO BE DONE
 
