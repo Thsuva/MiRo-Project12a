@@ -43,7 +43,7 @@ class Active(smach.State):
         start_time = time.time()  # Initialize the timer
         
         # While loop with 30 sec count down
-	while not rospy.is_shutdown() and (time.time() - start_time < 15):
+	while not rospy.is_shutdown() and (time.time() - start_time < 30):
             
             # Parsing of the text
 	    parsed_command = do_parsing(self.command, 'ACTIVE')
