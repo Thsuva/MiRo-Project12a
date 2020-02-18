@@ -44,7 +44,7 @@ TO BE DONE
 
 ## Architecture of the System
 
-The whole project has been thought as a state machine that handles the complex behaviour of MiRo robot. The structure of the state machine is shown in the following UML.
+The majority of the project has been thought as a state machine that handles the complex behaviour of MiRo robot. The structure of the state machine is shown in the following UML.
 
 ![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/StateMachine.jpg)
 
