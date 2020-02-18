@@ -35,7 +35,7 @@ class DummyLFO(smach.State):
         rospy.loginfo(self.target)
 	'''while not rospy.is_shutdown():
             #ACTIVATION COMMAND'''
-        if 1 == 2:
+        if 2 == 2:
             return 'recognizing_failure'
 
         return 'found'

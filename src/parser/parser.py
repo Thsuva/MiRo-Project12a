@@ -29,7 +29,7 @@ def do_parsing(text, calling_state):
     if calling_state == 'ACTIVE':
         # declaration of valid items
         VALID_ACTION_LIST = ['go','move']  # keyword for allowed action
-	VALID_COLOR_LIST  = ['yellow','blue','green']  # keyword for allowed colors
+	VALID_COLOR_LIST  = ['yellow','blue','green','red']  # keyword for allowed colors
 	VALID_TARGET_LIST = ['ball','circle']  # keyword for allowed shapes
 
         # looking for keyword in text_list

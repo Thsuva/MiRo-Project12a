@@ -42,15 +42,20 @@ class Failure(smach.State):
         while not rospy.is_shutdown() and (time.time() - start_time < 15):
 
             q.eyelid_closure = 0.3
-            q.body_config = [0.0,1.0,0.2,0.1]
-            q.body_config_speed = [0.0,-1.0,-1.0,-1.0]
+            q.body_config = [0.0,1.0,0.0,0.1]
+            q.body_config_speed = [0.0,-1.0,0.0,-1.0]
             q.lights_raw = [0,0,255,0,0,255,0,0,255,0,0,255,0,0,255,0,0,255]
             q.tail = -1.0
             q.ear_rotate = [1.0,1.0]
             q.body_vel.linear.x = 0.0
-            q.body_vel.angular.z = 0.2
+            q.body_vel.angular.z = 0.0
             self.pub_platform_control.publish(q)
             r.sleep()
         
+        q = platform_control()
+        q.eyelid_closure = 0.0
+        q.body_config = [0.0,0.45,0.0,-0.2]
+        q.body_config_speed = [0.0,-1.0,0.0,-1.0]
+        self.pub_platform_control.publish(q)
 
         return 'reset'
