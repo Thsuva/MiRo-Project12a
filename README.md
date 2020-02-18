@@ -96,7 +96,7 @@ TO BE DONE
 
 ## Report
 
-This is the link to the report: < put the link here >
+This is the link to the report: <[Report_MiRo-12a](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/Report_MiRo-12a.docx)>
 
 ## Acknowledgments
 
