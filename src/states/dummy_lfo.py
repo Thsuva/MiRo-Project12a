@@ -24,18 +24,27 @@ class DummyLFO(smach.State):
     ## Execute the state: MiRo starts looking for a specific object with given shape and colour 
     def execute(self, userdata):
         rospy.loginfo('Executing state DUMMY_LFO')
-        
-        # This part has to be filled with the actual code (dummy file)
+
+        # Collecting data form the Active state
+ 
+        ## Action to complete
         self.action = userdata.dummy_lfo_in[0]
-	self.color  = userdata.dummy_lfo_in[1]
-        self.target = userdata.dummy_lfo_in[2]
+        ## Color of the target
+	self.target_color  = userdata.dummy_lfo_in[1]
+        ## Shape of the target
+        self.target_shape = userdata.dummy_lfo_in[2]
+        # This part has to be filled with the actual code to move MIRO thowards the target (dummy file)
         
         rospy.loginfo(self.action)
-        rospy.loginfo(self.color)
-        rospy.loginfo(self.target)
+        rospy.loginfo(self.target_color)
+        rospy.loginfo(self.target_shape)
 	'''while not rospy.is_shutdown():
             #ACTIVATION COMMAND'''
-        if 2 == 2:
+        # TODO: this control needs to be bounded to a timer,  after the timer wears off MIRO will give up its research and
+        # will go to failure state where it will reset. Since "lfo" and "mto" states are in a loop 
+        # remember to initialize the timer at the start of the execute method so that miro will have a set amount of seconds
+        # to research the object each time. EXAMPLE OF TIMER USAGE CAN BE FOUND INSIDE THE ACTIVE STATE
+        if 1 == 2:
             return 'recognizing_failure'
 
         return 'found'

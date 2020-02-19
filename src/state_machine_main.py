@@ -65,7 +65,8 @@ def main():
                                    remapping={'dummy_lfo_in':'dummy_pa_in'})
             ## Add Move towards object state: MiRo moves towards the target object
             smach.StateMachine.add('DUMMY_MTO', DummyMTO(), 
-                                   transitions={'arrived':'outcome_end_pa'})
+                                   transitions={'arrived':'outcome_end_pa',
+                                                'not_arrived':'DUMMY_LFO'})
 
         ## Add the 'sm_perform_action' sub SMACH state machine to the main state machine 'sm'
         smach.StateMachine.add('DUMMY_PA', sm_perform_action, 

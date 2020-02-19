@@ -20,8 +20,13 @@ class Active(smach.State):
         ## Initialize the state
         smach.State.__init__(self, outcomes=['successful', 'time_failure'],
                                    output_keys=['active_out'])
-        self.command = String()  # String to evaluate 
-        self.min_confidence = .65  # min confidence allowed
+
+        ## Stirng object to evaluate
+        self.command = String()
+        ## Min confidence allowed
+        self.MIN_CONFIDENCE = .75  
+        ## Max number of seconds allowed for this state
+        self.MAX_DURATION = 30  
 
         ## Subscriber to the topic /speech_to_text a message of type Speech2text that cointains:
         ## - language found for the string
@@ -33,7 +38,7 @@ class Active(smach.State):
 
     ## Callback function that receive and save the user's voice command as text if the confidence exceed a set threshold
     def callback_receive_command(self, text):
-        if text.confidence > self.min_confidence:
+        if text.confidence > self.MIN_CONFIDENCE:
             self.command = text.transcript
     
     ## Execute the state: MiRo has 30 second to try and fully understand a command
@@ -43,7 +48,7 @@ class Active(smach.State):
         start_time = time.time()  # Initialize the timer
         
         # While loop with 30 sec count down
-	while not rospy.is_shutdown() and (time.time() - start_time < 30):
+	while not rospy.is_shutdown() and (time.time() - start_time < self.MAX_DURATION):
             
             # Parsing of the text
 	    parsed_command = do_parsing(self.command, 'ACTIVE')
