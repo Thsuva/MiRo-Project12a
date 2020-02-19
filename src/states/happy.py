@@ -70,7 +70,7 @@ class Happy(smach.State):
         ## Object of type platform control to publish 
         q = platform_control()
         
-        start_time = time.time()  # Initialize the timer
+        start_time = time.time()  # Initialize the time
         while not rospy.is_shutdown() and (time.time() - start_time < self.MAX_DURATION):
             
             q.sound_index_P1 = 1 # Valid values 1-30
