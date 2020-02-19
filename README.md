@@ -50,7 +50,7 @@ The general structure of the system is shown in figure 1 below. The state machin
 ![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/ComponentDiagram_sm.jpeg)
 
 ### Figure 2: State Machine
-![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/StateMachine.jpg)
+![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/StateMachine_sm.jpg)
 
 
 ## Description of the System’s Architecture
