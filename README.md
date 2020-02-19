@@ -47,10 +47,10 @@ TO BE DONE
 The general structure of the system is shown in figure 1 below. The state machine is treated as a component which is subscribed to /speech_to_text and some MIRO topics. It also publishes to MIRO through the /miro/rob01/platform/control topic complex messages. The whole structure of the state machine is, instead, shown in figure 2.
 
 ### Figure 1: Component Diagram
-![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/ComponentDiagram.jpeg | width=100)
+![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/ComponentDiagram_sm.jpeg)
 
 ### Figure 2: State Machine
-![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/StateMachine.jpg | width=100)
+![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/StateMachine.jpg)
 
 
 ## Description of the System’s Architecture
