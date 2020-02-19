@@ -26,7 +26,7 @@ Download the [Miro Developer kit](http://labs.consequentialrobotics.com/miro/mdk
 
 Follow the instructions from Consequential Robotics [Miro: Prepare Workstation](https://consequential.bitbucket.io/Developer_Preparation_Prepare_workstation.html) to set up your workstation to work with the robot. 
 Strictly follow the instructions in the Install **mdk** section as the following steps will rely on this.
-Not necessary to make static IP for your workstation (laptop) while setting up connection with MiRo.
+It's not necessary to make static IP for your workstation (laptop) while setting up connection with MiRo.
 For a clear tutorial step-by-step you should visit [Emarolab Miro Repository](https://github.com/EmaroLab/MIRO.git).
 
 ### ROS Based Speech Interface
@@ -44,11 +44,15 @@ TO BE DONE
 
 ## Architecture of the System
 
-The majority of the project has been thought as a state machine that handles the complex behaviour of MiRo robot. The structure of the state machine is shown in the following UML.
+The general structure of the system is shown in figure 1 below. The state machine is treated as a component which is subscribed to /speech_to_text and some MIRO topics. It also publishes to MIRO through the /miro/rob01/platform/control topic complex messages. The whole structure of the state machine is, instead, shown in figure 2.
+
+
+![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/ComponentDiagram.jpeg)
+Figure 1
+
 
 ![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/StateMachine.jpg)
-
-
+Figure 2
 
 ## Description of the System’s Architecture
 
