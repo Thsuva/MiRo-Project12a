@@ -100,7 +100,7 @@ $ roslaunch MiRo-Project12a state_machine.launch
 
 #### Happy state
 
-Here's a demo for the happy state (in this video it's simulated the fullfillment of its goal: the reaching of the blue ball): MiRo behaves happily for 30 seconds and reacts to touch stimuli. The behaviour of MiRo is shown below, while [here](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/EQMeZvnLBx9OluR2AFkJLnYBaOGU-gnepvsPBF5eK4xsxQ?e=FuvC8I) you can see what is going on in the terminal.
+Here's a demo for the happy state (in this video it's simulated the fullfillment of its goal: the reaching of the blue ball): MiRo behaves happily for 30 seconds and reacts to touch stimuli. The behaviour of MiRo is shown below, while [here](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/EQMeZvnLBx9OluR2AFkJLnYBAy0914OEhMV20R6UC7Ny_g?e=WnhXjn) you can see what is going on in the terminal.
 
 [![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/MiRo_happy.png)](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ESkJzJxdhqROq0a3JLB8qZ8Bw03ZDNqTLj3ChaNlXdOLrw?e=xmkb9y)
 
