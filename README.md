@@ -92,7 +92,7 @@ $ roslaunch MiRo-Project12a state_machine.launch
 
 ### RQT graphs
 
-#### Jacopo Favaro and Fabrizio Zavanone module
+#### Jacopo Favaro and Fabrizio Zavanone modules
 
 ![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/rqt_graph.jpg)
 
@@ -102,13 +102,13 @@ $ roslaunch MiRo-Project12a state_machine.launch
 
 Here's a demo for the happy state (in this video it's simulated the fullfillment of its goal: the reaching of the blue ball): MiRo behaves happily for 30 seconds and reacts to touch stimuli
 
-![](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ESkJzJxdhqROq0a3JLB8qZ8BbWpVMnt3pAK9d8XSExVqXg?e=yZMEJd)
+[![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/MiRo_happy.png)](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ESkJzJxdhqROq0a3JLB8qZ8BbWpVMnt3pAK9d8XSExVqXg?e=yZMEJd)
 
 #### Failure state
 
 Here's a demo for the failure state: MiRo behaves sadly for 15 seconds
 
-![](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ET7sVmuhv5JAlO0pEUt8FDcBSsdetHVc939oVpLJmGD25w?e=KX8phc)
+[![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/MiRo_sad.png)](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ET7sVmuhv5JAlO0pEUt8FDcBSsdetHVc939oVpLJmGD25w?e=KX8phc)
 
 ## Report
 
