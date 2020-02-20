@@ -17,7 +17,7 @@ The project has been developed and tested with [ROS Kinetic](http://wiki.ros.org
 ### MIROapp v1.0
 
 To establish a connection with MiRo it is necessary to download and install [MiRo app](http://labs.consequentialrobotics.com/download.php?file=miroapp-200107.apk) on a working Android device.
-MiRo and the device communicate via bluetooth. After having established the connection, simply put MiRo in normal mode and check for the correct behaviour (bridge running, files present, battery percentage displayed).
+MiRo and the device interact via bluetooth. After the connection has been established, simply put MiRo in normal mode and check for the correct behaviour (bridge running, files present, battery percentage displayed).
 In presence of any kind of problem, put back MiRo in demo mode (being sure that silent and immobile options are checked) and then back to normal.
 
 ### MiRo Workstation Setup
@@ -25,7 +25,7 @@ In presence of any kind of problem, put back MiRo in demo mode (being sure that 
 Download the [Miro Developer kit](http://labs.consequentialrobotics.com/miro/mdk/).
 
 Follow the instructions from Consequential Robotics [Miro: Prepare Workstation](https://consequential.bitbucket.io/Developer_Preparation_Prepare_workstation.html) to set up your workstation to work with the robot. 
-Strictly follow the instructions in the Install **mdk** section as the following steps will rely on this.
+Strictly follow the instructions in the **install mdk** section as the following steps will rely on this.
 It's not necessary to make static IP for your workstation (laptop) while setting up connection with MiRo.
 For a clear tutorial step-by-step you should visit [Emarolab Miro Repository](https://github.com/EmaroLab/MIRO.git).
 
@@ -100,13 +100,13 @@ $ roslaunch MiRo-Project12a state_machine.launch
 
 #### Happy state
 
-Here's a demo for the happy state (in this video it's simulated the fullfillment of its goal: the reaching of the blue ball): MiRo behaves happily for 30 seconds and reacts to touch stimuli. The behaviour of MiRo is shown below, while [here](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/EQMeZvnLBx9OluR2AFkJLnYBAy0914OEhMV20R6UC7Ny_g?e=WnhXjn) you can see what is going on in the terminal.
+Here's a demo for the happy state (in this video it's simulated the fullfillment of the goal): MiRo behaves happily for 30 seconds and reacts to touch stimuli. The behaviour of MiRo is shown below, while [here](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/EQMeZvnLBx9OluR2AFkJLnYBAy0914OEhMV20R6UC7Ny_g?e=WnhXjn) you can see what is going on in the terminal.
 
 [![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/MiRo_happy.png)](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ESkJzJxdhqROq0a3JLB8qZ8Bw03ZDNqTLj3ChaNlXdOLrw?e=xmkb9y)
 
 #### Failure state
 
-Here's a demo for the failure state: MiRo behaves sadly for 15 seconds. The behaviour of MiRo is shown below, while [here](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ERFIsZhbV3RBkqEenLSmBmQBOJXQS6WQeMMWzCbNfcP9Sw?e=ETsVVp) you can see what is going on in the terminal.
+Here's a demo for the failure state: MiRo, after failing to understand the command, behaves sadly for 15 seconds. The behaviour of MiRo is shown below, while [here](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ERFIsZhbV3RBkqEenLSmBmQBOJXQS6WQeMMWzCbNfcP9Sw?e=ETsVVp) you can see what is going on in the terminal.
 
 [![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/MiRo_sad.png)](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ET7sVmuhv5JAlO0pEUt8FDcBmhItLRQtnhiZq7-rXuLdyA?e=jLgAcA)
 
