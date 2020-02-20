@@ -1,0 +1,12 @@
+This folder contains the files that are needed for the state machine architecture.
+
+By Jacopo Favaro, Fabrizio Zavanone.\hypertarget{md_src_states_README_autotoc_md24}{}\doxysection{The modules}\label{md_src_states_README_autotoc_md24}
+
+\begin{DoxyItemize}
+\item {\bfseries{\mbox{\hyperlink{idle_8py}{src/states/idle.\+py}}}}\+: the first state of the state machine waits for the \char`\"{}wake up word\char`\"{} and goes to active state when hears it.
+\item {\bfseries{\mbox{\hyperlink{active_8py}{src/states/active.\+py}}}}\+: this state listens from the {\ttfamily /speech\+\_\+to\+\_\+text} topic and tries to get enough information to start the \char`\"{}look for object\char`\"{} routine.
+\item {\bfseries{\mbox{\hyperlink{dummy__lfo_8py}{src/states/dummy\+\_\+lfo.\+py}}}}\+: dummy state which will contain functions to move the robot and locate the desired object.
+\item {\bfseries{\mbox{\hyperlink{dummy__mto_8py}{src/states/dummy\+\_\+mto.\+py}}}}\+: dummy state which will move the robot towards his destination.
+\item {\bfseries{\mbox{\hyperlink{failure_8py}{src/states/failure.\+py}}}}\+: state of passage where Mi\+Ro signals the failure of one of his actions before getting back to idle state\+: Mi\+Ro puts down his head and moves his ears in a sad behaviour.
+\item {\bfseries{\mbox{\hyperlink{happy_8py}{src/states/happy.\+py}}}}\+: final state in which Mi\+Ro signals the completion of his objective before shutting down\+: Mi\+Ro moves his tail and reacts to external stimuli like the touch of his head and body. 
+\end{DoxyItemize}

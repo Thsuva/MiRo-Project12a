@@ -1,0 +1,71 @@
+This is the repository for S\+O\+F\+AR Project 12a.
+
+Project by Jacopo Favaro, Fabrizio Zavanone, Muhammad Talha Siddiqui, Muhammad Tahir, Muhammad Sayum Ahmed, Syed Hani Kazmi Hussain.\hypertarget{md_README_autotoc_md1}{}\doxysection{Objective of the Project}\label{md_README_autotoc_md1}
+The project is aimed to build a software architecture to control, using audio commands, the social robot Mi\+Ro. Mi\+Ro has to perform simple actions like moving near a specified target, given its shape and colour.\hypertarget{md_README_autotoc_md2}{}\doxysection{Prerequisites}\label{md_README_autotoc_md2}
+\hypertarget{md_README_autotoc_md3}{}\doxysubsection{R\+OS}\label{md_README_autotoc_md3}
+The project has been developed and tested with \href{http://wiki.ros.org/kinetic/Installation/Ubuntu}{\texttt{ R\+OS Kinetic}}.\hypertarget{md_README_autotoc_md4}{}\doxysubsection{M\+I\+R\+Oapp v1.\+0}\label{md_README_autotoc_md4}
+To establish a connection with Mi\+Ro it is necessary to download and install \href{http://labs.consequentialrobotics.com/download.php?file=miroapp-200107.apk}{\texttt{ Mi\+Ro app}} on a working Android device. Mi\+Ro and the device interact via bluetooth. After the connection has been established, simply put Mi\+Ro in normal mode and check for the correct behaviour (bridge running, files present, battery percentage displayed). In presence of any kind of problem, put back Mi\+Ro in demo mode (being sure that silent and immobile options are checked) and then back to normal.\hypertarget{md_README_autotoc_md5}{}\doxysubsection{Mi\+Ro Workstation Setup}\label{md_README_autotoc_md5}
+Download the \href{http://labs.consequentialrobotics.com/miro/mdk/}{\texttt{ Miro Developer kit}}.
+
+Follow the instructions from Consequential Robotics \href{https://consequential.bitbucket.io/Developer_Preparation_Prepare_workstation.html}{\texttt{ Miro\+: Prepare Workstation}} to set up your workstation to work with the robot. Strictly follow the instructions in the {\bfseries{install mdk}} section as the following steps will rely on this. It\textquotesingle{}s not necessary to make static IP for your workstation (laptop) while setting up connection with Mi\+Ro. For a clear tutorial step-\/by-\/step you should visit \href{https://github.com/EmaroLab/MIRO.git}{\texttt{ Emarolab Miro Repository}}.\hypertarget{md_README_autotoc_md6}{}\doxysubsection{R\+O\+S Based Speech Interface}\label{md_README_autotoc_md6}
+This module handles speech to text conversion. To install it, run in your catkin workpace\textquotesingle{}s src folder\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ git clone https://github.com/EmaroLab/ros\_verbal\_interaction\_node.git}
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md7}{}\doxysubsection{Open\+C\+V apps}\label{md_README_autotoc_md7}
+TO BE D\+O\+NE\hypertarget{md_README_autotoc_md8}{}\doxysection{Architecture of the System}\label{md_README_autotoc_md8}
+The general structure of the system is shown in figure 1 below. The state machine is treated as a component which is subscribed to {\ttfamily /speech\+\_\+to\+\_\+text} and some M\+I\+RO topics. It also publishes to M\+I\+RO through the {\ttfamily /miro/rob01/platform/control} topic complex messages. The whole structure of the state machine is, instead, shown in figure 2.\hypertarget{md_README_autotoc_md9}{}\doxysubsection{Figure 1\+: Component Diagram}\label{md_README_autotoc_md9}
+\hypertarget{md_README_autotoc_md10}{}\doxysubsection{Figure 2\+: State Machine}\label{md_README_autotoc_md10}
+\hypertarget{md_README_autotoc_md11}{}\doxysection{Description of the System’s Architecture}\label{md_README_autotoc_md11}
+\hypertarget{md_README_autotoc_md12}{}\doxysubsection{Module $<$ state machine $>$}\label{md_README_autotoc_md12}
+This module has been developed by Fabrizio Zavanone and Jacopo Favaro. It uses smach library with python 2.\+7. The files relative to this module are\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{\mbox{\hyperlink{state__machine__main_8py}{src/state\+\_\+machine\+\_\+main.\+py}}}}\+: main file that builds the state machine, which is the back bone of the project
+\item {\bfseries{src/states/}}\+: directory which contains all the needed states to make the state machine work (for more specific information, see the readme file inside the folder).
+\item {\bfseries{\mbox{\hyperlink{parser_8py}{src/parser/parser.\+py}}}}\+: file that contains the logic to clean up the input from {\ttfamily /speech\+\_\+to\+\_\+text} in order to get the required information (action, colour, target). To wake up Mi\+Ro, only the chosen \char`\"{}wake up word\char`\"{} (that can be modified inside this file) is needed.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md13}{}\doxysubsection{Module $<$ speech to text $>$}\label{md_README_autotoc_md13}
+This module, that handles speech to text conversion, is taken from \href{https://github.com/EmaroLab/ros_verbal_interaction_node.git}{\texttt{ this repository}}, which contains a web interface based on Google Speech Demo. Once runned, text converted from an audio input will be published on {\ttfamily /speech\+\_\+to\+\_\+text} alongside with its confidence and detected language. The interface also handles text to speech, but for our project we simply decided to discard this part by publishing on an unusubscribed topic. To do so, modify \href{https://github.com/EmaroLab/ros_verbal_interaction_node/blob/master/java-script/speech_web_interface.html}{\texttt{ speech\+\_\+web\+\_\+interface.\+html}}, changing the topic name from {\ttfamily /text\+\_\+to\+\_\+speech} to something else.\hypertarget{md_README_autotoc_md14}{}\doxysection{Installation and System Testing}\label{md_README_autotoc_md14}
+To install the system, in your catkin workspace\textquotesingle{}s src folder do\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ git clone https://github.com/Thsuva/MiRo-\/Project12a}
+\DoxyCodeLine{\$ cd ..}
+\DoxyCodeLine{\$ catkin\_make}
+\end{DoxyCode}
+
+
+To run it, simply type and run\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ roslaunch MiRo-\/Project12a state\_machine.launch}
+\end{DoxyCode}
+
+
+{\bfseries{Be sure to launch the app to connect to Mi\+Ro only in this moment, otherwise there will be a failure of connection (Mi\+Ro topics won\textquotesingle{}t be present in your rostopic list).}}\hypertarget{md_README_autotoc_md15}{}\doxysubsection{R\+Q\+T graphs}\label{md_README_autotoc_md15}
+\hypertarget{md_README_autotoc_md16}{}\doxysubsubsection{Jacopo Favaro and Fabrizio Zavanone modules}\label{md_README_autotoc_md16}
+\hypertarget{md_README_autotoc_md17}{}\doxysubsection{Demonstration}\label{md_README_autotoc_md17}
+\hypertarget{md_README_autotoc_md18}{}\doxysubsubsection{Happy state}\label{md_README_autotoc_md18}
+Here\textquotesingle{}s a demo for the happy state (in this video it\textquotesingle{}s simulated the fullfillment of the goal)\+: Mi\+Ro behaves happily for 30 seconds and reacts to touch stimuli. The behaviour of Mi\+Ro is shown below, while \href{https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/EQMeZvnLBx9OluR2AFkJLnYBAy0914OEhMV20R6UC7Ny_g?e=WnhXjn}{\texttt{ here}} you can see what is going on in the terminal.
+
+\href{https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ESkJzJxdhqROq0a3JLB8qZ8Bw03ZDNqTLj3ChaNlXdOLrw?e=xmkb9y}{\texttt{ }}\hypertarget{md_README_autotoc_md19}{}\doxysubsubsection{Failure state}\label{md_README_autotoc_md19}
+Here\textquotesingle{}s a demo for the failure state\+: Mi\+Ro, after failing to understand the command, behaves sadly for 15 seconds. The behaviour of Mi\+Ro is shown below, while \href{https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ERFIsZhbV3RBkqEenLSmBmQBOJXQS6WQeMMWzCbNfcP9Sw?e=ETsVVp}{\texttt{ here}} you can see what is going on in the terminal.
+
+\href{https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ET7sVmuhv5JAlO0pEUt8FDcBmhItLRQtnhiZq7-rXuLdyA?e=jLgAcA}{\texttt{ }}\hypertarget{md_README_autotoc_md20}{}\doxysection{Report}\label{md_README_autotoc_md20}
+This is the link to the report\+: $<$\href{https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/Report_MiRo-12a.docx}{\texttt{ Report\+\_\+\+Mi\+Ro-\/12a}}$>$\hypertarget{md_README_autotoc_md21}{}\doxysection{Acknowledgments}\label{md_README_autotoc_md21}
+
+\begin{DoxyItemize}
+\item \href{https://github.com/EmaroLab/ros_verbal_interaction_node.git}{\texttt{ ros\+\_\+verbal\+\_\+interaction\+\_\+node}}\+: repository by Luca Buoncompagni
+\item \href{https://github.com/EmaroLab/MiRo-training}{\texttt{ Mi\+Ro-\/training}}\+: repository by Roberta Delrio, Valentina Pericu
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md22}{}\doxysection{Authors}\label{md_README_autotoc_md22}
+
+\begin{DoxyItemize}
+\item Jacopo Favaro\+: \href{mailto:S3947407@studenti.unige.it}{\texttt{ S3947407@studenti.\+unige.\+it}}
+\item Fabrizio Zavanone\+: \href{mailto:S3945845@studenti.unige.it}{\texttt{ S3945845@studenti.\+unige.\+it}}
+\item First\+Name Last\+Name\+: \href{mailto:email@email.com}{\texttt{ email@email.\+com}} 
+\end{DoxyItemize}

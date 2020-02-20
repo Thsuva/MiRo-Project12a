@@ -1,0 +1,78 @@
+\hypertarget{classstates_1_1active_1_1Active}{}\doxysection{states.\+active.\+Active Class Reference}
+\label{classstates_1_1active_1_1Active}\index{states.active.Active@{states.active.Active}}
+Inheritance diagram for states.\+active.\+Active\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classstates_1_1active_1_1Active}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstates_1_1active_1_1Active_a719b3753b875060d453f68d6145b9c6d}\label{classstates_1_1active_1_1Active_a719b3753b875060d453f68d6145b9c6d}} 
+def \mbox{\hyperlink{classstates_1_1active_1_1Active_a719b3753b875060d453f68d6145b9c6d}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstates_1_1active_1_1Active_a0f0adf8f90bcfe5c6542bb2025e6c63f}\label{classstates_1_1active_1_1Active_a0f0adf8f90bcfe5c6542bb2025e6c63f}} 
+def \mbox{\hyperlink{classstates_1_1active_1_1Active_a0f0adf8f90bcfe5c6542bb2025e6c63f}{callback\+\_\+receive\+\_\+command}} (self, text)
+\begin{DoxyCompactList}\small\item\em Callback function that receive and save the user\textquotesingle{}s voice command as text if the confidence exceed a set threshold. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstates_1_1active_1_1Active_ab2ed8035256b6ac814e5501d33436186}\label{classstates_1_1active_1_1Active_ab2ed8035256b6ac814e5501d33436186}} 
+def \mbox{\hyperlink{classstates_1_1active_1_1Active_ab2ed8035256b6ac814e5501d33436186}{execute}} (self, userdata)
+\begin{DoxyCompactList}\small\item\em Execute the state\+: Mi\+Ro has 30 second to try and fully understand a command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstates_1_1active_1_1Active_acc91bb4191afc06ed80a9adda2038b84}\label{classstates_1_1active_1_1Active_acc91bb4191afc06ed80a9adda2038b84}} 
+\mbox{\hyperlink{classstates_1_1active_1_1Active_acc91bb4191afc06ed80a9adda2038b84}{M\+I\+N\+\_\+\+C\+O\+N\+F\+I\+D\+E\+N\+CE}}
+\begin{DoxyCompactList}\small\item\em Min confidence allowed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstates_1_1active_1_1Active_a9c063ce3d5776adc5429a1da63c5ee02}\label{classstates_1_1active_1_1Active_a9c063ce3d5776adc5429a1da63c5ee02}} 
+\mbox{\hyperlink{classstates_1_1active_1_1Active_a9c063ce3d5776adc5429a1da63c5ee02}{M\+A\+X\+\_\+\+D\+U\+R\+A\+T\+I\+ON}}
+\begin{DoxyCompactList}\small\item\em Max number of seconds allowed for this state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstates_1_1active_1_1Active_ae29e900466286cb86fc9fa2878461cec}{sub\+\_\+speech\+\_\+to\+\_\+text}}
+\begin{DoxyCompactList}\small\item\em Subscriber to the topic /speech\+\_\+to\+\_\+text a message of type Speech2text that cointains\+: \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstates_1_1active_1_1Active_a5a220e298597cf539ee1d22225e4fe3a}\label{classstates_1_1active_1_1Active_a5a220e298597cf539ee1d22225e4fe3a}} 
+\mbox{\hyperlink{classstates_1_1active_1_1Active_a5a220e298597cf539ee1d22225e4fe3a}{pub\+\_\+rgb\+\_\+light}}
+\begin{DoxyCompactList}\small\item\em Publisher to the topic /rgb\+\_\+msg, the messagen is of type String and signals that the light should be truned on, and which color they should have. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstates_1_1active_1_1Active_a41b1f7e8403fa02c3cc2e76cb8a36888}\label{classstates_1_1active_1_1Active_a41b1f7e8403fa02c3cc2e76cb8a36888}} 
+{\bfseries parsed\+\_\+command} = do\+\_\+parsing(self.\+command, \textquotesingle{}A\+C\+T\+I\+VE\textquotesingle{})
+\item 
+\mbox{\Hypertarget{classstates_1_1active_1_1Active_aa6a473c6c89e442683405b895bb5cc70}\label{classstates_1_1active_1_1Active_aa6a473c6c89e442683405b895bb5cc70}} 
+{\bfseries active\+\_\+out}
+\item 
+\mbox{\hyperlink{classstates_1_1active_1_1Active_a0d6a44eb61d7236e2f2a818fa71892e6}{command}}
+\begin{DoxyCompactList}\small\item\em Initialize the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classstates_1_1active_1_1Active_a0d6a44eb61d7236e2f2a818fa71892e6}\label{classstates_1_1active_1_1Active_a0d6a44eb61d7236e2f2a818fa71892e6}} 
+\index{states.active.Active@{states.active.Active}!command@{command}}
+\index{command@{command}!states.active.Active@{states.active.Active}}
+\doxysubsubsection{\texorpdfstring{command}{command}}
+{\footnotesize\ttfamily states.\+active.\+Active.\+command\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initialize the state. 
+
+Stirng object to evaluate \mbox{\Hypertarget{classstates_1_1active_1_1Active_ae29e900466286cb86fc9fa2878461cec}\label{classstates_1_1active_1_1Active_ae29e900466286cb86fc9fa2878461cec}} 
+\index{states.active.Active@{states.active.Active}!sub\_speech\_to\_text@{sub\_speech\_to\_text}}
+\index{sub\_speech\_to\_text@{sub\_speech\_to\_text}!states.active.Active@{states.active.Active}}
+\doxysubsubsection{\texorpdfstring{sub\_speech\_to\_text}{sub\_speech\_to\_text}}
+{\footnotesize\ttfamily states.\+active.\+Active.\+sub\+\_\+speech\+\_\+to\+\_\+text}
+
+
+
+Subscriber to the topic /speech\+\_\+to\+\_\+text a message of type Speech2text that cointains\+: 
+
+
+\begin{DoxyItemize}
+\item language found for the string
+\item the vocal command converted in text
+\item confidence of the transcription 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/states/\mbox{\hyperlink{active_8py}{active.\+py}}\end{DoxyCompactItemize}
