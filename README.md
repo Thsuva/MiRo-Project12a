@@ -44,7 +44,7 @@ TO BE DONE
 
 ## Architecture of the System
 
-The general structure of the system is shown in figure 1 below. The state machine is treated as a component which is subscribed to /speech_to_text and some MIRO topics. It also publishes to MIRO through the /miro/rob01/platform/control topic complex messages. The whole structure of the state machine is, instead, shown in figure 2.
+The general structure of the system is shown in figure 1 below. The state machine is treated as a component which is subscribed to `/speech_to_text` and some MIRO topics. It also publishes to MIRO through the `/miro/rob01/platform/control` topic complex messages. The whole structure of the state machine is, instead, shown in figure 2.
 
 ### Figure 1: Component Diagram
 ![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/ComponentDiagram_sm.jpeg)
@@ -66,7 +66,7 @@ This module has been developed by Fabrizio Zavanone and Jacopo Favaro. It uses s
 ### Module < speech to text >
 
 This module, that handles speech to text conversion, is taken from [this repository](https://github.com/EmaroLab/ros_verbal_interaction_node.git), which contains a web interface based on Google Speech Demo.
-Once runned, text converted from an audio input will be published on /speech_to_text alongside with its confidence and detected language.
+Once runned, text converted from an audio input will be published on `/speech_to_text` alongside with its confidence and detected language.
 The interface also handles text to speech, but for our project we simply decided to discard this part by publishing on an unusubscribed topic. To do so, modify [speech_web_interface.html](https://github.com/EmaroLab/ros_verbal_interaction_node/blob/master/java-script/speech_web_interface.html), changing the topic name from `/text_to_speech` to something else.
 
 ### Module < name >
