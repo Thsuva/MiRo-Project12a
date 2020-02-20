@@ -24,9 +24,9 @@ class Active(smach.State):
         ## Stirng object to evaluate
         self.command = String()
         ## Min confidence allowed
-        self.MIN_CONFIDENCE = .75  
+        self.MIN_CONFIDENCE = .75
         ## Max number of seconds allowed for this state
-        self.MAX_DURATION = 30  
+        self.MAX_DURATION = 40
 
         ## Subscriber to the topic /speech_to_text a message of type Speech2text that cointains:
         ## - language found for the string
