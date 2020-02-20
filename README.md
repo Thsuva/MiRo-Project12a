@@ -89,13 +89,26 @@ $ roslaunch MiRo-Project12a state_machine.launch
 ```
 
 **Be sure to launch the app to connect to MiRo only in this moment, otherwise there will be a failure of connection (MiRo topics won't be present in your rostopic list).**
-### RQT graph
 
-TO BE DONE
+### RQT graphs
+
+#### Jacopo Favaro and Fabrizio Zavanone module
+
+![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/rqt_graph.jpg)
 
 ### Demonstration
 
-TO BE DONE
+#### Happy state
+
+Here's a demo for the happy state (in this video it's simulated the fullfillment of its goal: the reaching of the blue ball): MiRo behaves happily for 30 seconds and reacts to touch stimuli
+
+![](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ESkJzJxdhqROq0a3JLB8qZ8BbWpVMnt3pAK9d8XSExVqXg?e=yZMEJd)
+
+#### Failure state
+
+Here's a demo for the failure state: MiRo behaves sadly for 15 seconds
+
+![](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ET7sVmuhv5JAlO0pEUt8FDcBSsdetHVc939oVpLJmGD25w?e=KX8phc)
 
 ## Report
 
@@ -103,10 +116,10 @@ This is the link to the report: <[Report_MiRo-12a](https://github.com/Thsuva/MiR
 
 ## Acknowledgments
 
-* [ros_verbal_interaction_node](https://github.com/EmaroLab/ros_verbal_interaction_node.git) repository by Luca Buoncompagni
-* [MiRo-training](https://github.com/EmaroLab/MiRo-training) repository by Roberta Delrio, Valentina Pericu
+* [ros_verbal_interaction_node](https://github.com/EmaroLab/ros_verbal_interaction_node.git): repository by Luca Buoncompagni
+* [MiRo-training](https://github.com/EmaroLab/MiRo-training): repository by Roberta Delrio, Valentina Pericu
 
 ## Authors
-* Jacopo Favaro S3947407@studenti.unige.it
-* Fabrizio Zavanone S3945845@studenti.unige.it
+* Jacopo Favaro: S3947407@studenti.unige.it
+* Fabrizio Zavanone: S3945845@studenti.unige.it
 * FirstName LastName: email@email.com
