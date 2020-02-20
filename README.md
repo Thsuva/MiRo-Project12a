@@ -108,7 +108,7 @@ Here's a demo for the happy state (in this video it's simulated the fullfillment
 
 Here's a demo for the failure state: MiRo behaves sadly for 15 seconds
 
-[![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/MiRo_sad.png)](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ET7sVmuhv5JAlO0pEUt8FDcBSsdetHVc939oVpLJmGD25w?e=KX8phc)
+[![](https://github.com/Thsuva/MiRo-Project12a/blob/state_machine/docs/MiRo_sad.png)](https://unigeit-my.sharepoint.com/:v:/g/personal/s3947407_studenti_unige_it/ET7sVmuhv5JAlO0pEUt8FDcBmhItLRQtnhiZq7-rXuLdyA?e=jLgAcA)
 
 ## Report
 
