@@ -69,10 +69,6 @@ This module, that handles speech to text conversion, is taken from [this reposit
 Once runned, text converted from an audio input will be published on `/speech_to_text` alongside with its confidence and detected language.
 The interface also handles text to speech, but for our project we simply decided to discard this part by publishing on an unusubscribed topic. To do so, modify [speech_web_interface.html](https://github.com/EmaroLab/ros_verbal_interaction_node/blob/master/java-script/speech_web_interface.html), changing the topic name from `/text_to_speech` to something else.
 
-### Module < name >
-
-TO BE DONE
-
 ## Installation and System Testing
 
 To install the system, in your catkin workspace's src folder do:
